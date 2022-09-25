@@ -84,38 +84,51 @@ const Carousel = styled(Slider)`
 `;
 
 const Wrap = styled.div`
-  border-radius: 10px;
-  cursor: pointer;
-  position: relative;
-  transition: scale 500ms;
-
-  a{
     border-radius: 10px;
-    box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px, rgb( 0 0 0 / 73%) 0px 16px 10px -10px;
     cursor: pointer;
-    display: block;
     position: relative;
-    border: 5px solid rgba(249, 249, 249, 0.1);
-    margin: 15px;
-    transition: border 500ms;
+    transition: transform 500ms;
+
+    a{
+      border-radius: 10px;
+      box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px, rgb( 0 0 0 / 73%) 0px 16px 10px -10px;
+      cursor: pointer;
+      display: block;
+      position: relative;
+      border: 5px solid rgba(249, 249, 249, 0.1);
+      background: rgba(249, 249, 249, 0.1);
+      margin: 15px;
+      transition: border 500ms;
+
+      &:hover{
+        padding: 0;
+        border: 5px solid rgba(249, 249, 249, 0.8);
+      }
+    }
+
+    img{
+      border-radius: 9px;
+      margin:auto;
+      width: 100%;
+      height: 100%;
+    }
 
     &:hover{
-      padding: 0;
-      border: 5px solid rgba(249, 249, 249, 0.8);
+      transform: scale(1.015); 
     }
-  }
 
-  img{
-    border-radius: 10px;
-    margin:auto;
-    width: 100%;
-    height: 100%;
-  }
+    @media only screen and (max-width: 768px){
+      a{
+        margin: 4px;
+        border: 2px solid rgba(249, 249, 249, 0.1);
 
-  &:hover{
-    scale: 1.015;
-    
-  }
+        &:hover{
+          padding: 0;
+          border: 2px solid rgba(249, 249, 249, 0.8);
+        }
+      }
+    }
+
 `;
 
 export default ImgSlider;
