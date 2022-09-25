@@ -9,24 +9,35 @@ const ImgSlider = () => {
   let settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 700,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autolay: true,
+    autoplay: true,
   };
 
   return (
     <div>
       <Carousel {...settings}>
-        <div>
-          <h3>1</h3>
-        </div>
-        <div>
-          <h3>2</h3>
-        </div>
-        <div>
-          <h3>3</h3>
-        </div>
+        <Wrap>
+          <a>
+            <img src="../../resources/images/slider-badag.jpg" alt="" />
+          </a>
+        </Wrap>
+        <Wrap>
+          <a>
+            <img src="../../resources/images/slider-badging.jpg" alt="" />
+          </a>
+        </Wrap>
+        <Wrap>
+          <a>
+            <img src="../../resources/images/slider-scale.jpg" alt="" />
+          </a>
+        </Wrap>
+        <Wrap>
+          <a>
+            <img src="../../resources/images/slider-scales.jpg" alt="" />
+          </a>
+        </Wrap>
       </Carousel>
     </div>
   )
@@ -69,6 +80,41 @@ const Carousel = styled(Slider)`
 
   .slick-next{
     right: -75px;
+  }
+`;
+
+const Wrap = styled.div`
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  transition: scale 500ms;
+
+  a{
+    border-radius: 10px;
+    box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px, rgb( 0 0 0 / 73%) 0px 16px 10px -10px;
+    cursor: pointer;
+    display: block;
+    position: relative;
+    border: 5px solid rgba(249, 249, 249, 0.1);
+    margin: 15px;
+    transition: border 500ms;
+
+    &:hover{
+      padding: 0;
+      border: 5px solid rgba(249, 249, 249, 0.8);
+    }
+  }
+
+  img{
+    border-radius: 10px;
+    margin:auto;
+    width: 100%;
+    height: 100%;
+  }
+
+  &:hover{
+    scale: 1.015;
+    
   }
 `;
 
