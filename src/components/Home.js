@@ -3,13 +3,27 @@ import styled from 'styled-components';
 import ImgSlider from './ImgSlider';
 import Viewers from './Viewers';
 import Recommendations from './Recommendations';
+import Trending from './Trending';
+import NewShows from './NewShows';
+import Originals from './Originals';
+import Footer from './Footer';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import db from '../firebase';
+import { setMovies } from '../features/movie/MovieSlice';
+import { selectUserName } from '../features/user/userSlice'
 
 const Home = () => {
+
   return (
     <Contianer>
         <ImgSlider />
         <Viewers />
         <Recommendations />
+        <Trending />
+        <NewShows />
+        <Originals />
+        <Footer />
     </Contianer>
   )
 }
